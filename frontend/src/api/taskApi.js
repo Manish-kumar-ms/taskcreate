@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:8000/api/tasks",
+  baseURL: "https://taskcreate-backend.onrender.com/api/tasks",
 });
 
 export const getTasks = (params) => API.get("/", { params });
