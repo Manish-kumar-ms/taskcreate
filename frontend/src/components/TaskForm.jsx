@@ -76,12 +76,14 @@ const TaskForm = ({ refresh }) => {
       <button
         disabled={!isValid || isLoading}
         className={`w-full py-2 rounded text-white transition
-          ${
-            isLoading
-              ? "bg-blue-400 cursor-not-allowed"
-              : "bg-blue-600 hover:bg-blue-700 cursor-pointer"
-          }
-        `}
+    ${
+      !isValid
+        ? "bg-gray-300 cursor-not-allowed"
+        : isLoading
+        ? "bg-blue-400 cursor-wait"
+        : "bg-blue-600 hover:bg-blue-700 cursor-pointer"
+    }
+  `}
       >
         {isLoading ? "Creating..." : "Add Task"}
       </button>
